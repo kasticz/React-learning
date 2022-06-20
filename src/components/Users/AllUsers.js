@@ -1,29 +1,26 @@
-import Card from "../UI/Card"
-import styles from './AllUsers.module.css'
-import User from './User'
+import Card from "../UI/Card";
+import styles from "./AllUsers.module.css";
+import User from "./User";
 
-function AllUsers(props){
-    let userList;
-    if(props.AllUsers){
-            userList = props.AllUsers.map((item)=>{
-            return <User
-            key={item.id}
-            name={item.username}
-            age={`(${item.userage} years old`}
-            />
-        }) 
-    }
+function AllUsers(props) {
+  let userList;
+  if (props.AllUsers) {
+    userList = props.AllUsers.map((item) => {
+      return (
+        <User
+          key={item.id}
+          name={item.username}
+          age={`(${item.userage} years old`}
+        />
+      );
+    });
+  }
 
-    if(!props.AllUsers.length){
-        return;
-    } 
-     
+  if (!props.AllUsers.length) {
+    return;
+  }
 
-    return(
-        <Card className={styles.usersCard}>
-            {userList}
-        </Card>
-    )
+  return <Card className={styles.usersCard}>{userList}</Card>;
 }
 
-export default AllUsers
+export default AllUsers;

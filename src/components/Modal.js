@@ -3,10 +3,10 @@ import Card from "./UI/Card";
 import "./Modal.css";
 
 function Modal(props) {
-  const errorDescr = props.error
-  function checkClickOnOverlay(e){
-    if(e.target.classList.contains(`overlay`)){
-      props.onCloseModal()
+  const errorDescr = props.error;
+  function checkClickOnOverlay(e) {
+    if (e.target.classList.contains(`overlay`)) {
+      props.onCloseModal();
     }
   }
   return (
