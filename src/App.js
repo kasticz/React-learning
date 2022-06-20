@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Form from './components/Form/Form';
+import './App.css'
+import Modal from './components/Modal';
+import AllUsers from './components/Users/AllUsers';
 
 function App() {
+  const [invalidMsg,setinvalidMsg] = useState(``)
+  const [currAllUsers,setCurrAllUsers] = useState([])
+  function getInvalidInputs(errorMsg){
+    setinvalidMsg(errorMsg)
+  }
+  function onCloseModal(){
+    setinvalidMsg(``)
+  }
+  function onSaveNewUser(newUser){
+    setCurrAllUsers((prevState)=>{
+      return [
+        ...prevState,
+        newUser
+      ]
+    })    
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='body'>
+      { invalidMsg ? <Modal error={invalidMsg} onCloseModal={onCloseModal}/> : `` }
+      <Form onSaveNewUser={onSaveNewUser}onGetInvalidInputs={getInvalidInputs}/> 
+      <AllUsers AllUsers={currAllUsers} />          
     </div>
   );
 }
