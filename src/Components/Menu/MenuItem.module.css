@@ -1,0 +1,73 @@
+.item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+}
+.itemAlt{
+    border-bottom: 2px solid #ad5502;
+}
+.itemDescr{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+.itemDescr{
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+.itemPrice{
+    color: #ad5502;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.itemTitle{
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem 0;
+}
+.itemTitle:nth-of-type(1){
+    margin-top: 1rem;
+}
+.buttonsWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+}
+.minus,.plus{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: #b94517;
+    background-color: #fff;  
+    width: 45%;  
+    border: 1px solid #b94517;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+}
+.minus:hover,.plus:hover,
+.minus:active,.plus:active{
+    background-color: #b94517;
+    color: white;
+}
+.minus{
+    margin-right: 1rem;
+}
+
+.amountWrapper{
+    display: flex;
+    align-items: center
+}
+.amount{
+    margin-left: 4rem;
+    border: 1px solid rgb(209, 202, 202);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+
