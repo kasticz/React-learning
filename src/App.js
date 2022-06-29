@@ -1,39 +1,28 @@
 import Nav from "./Components/Nav/Nav";
 import Header from "./Components/Header/Header";
 import Menu from "./Components/Menu/Menu";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Backdrop from "./Components/Modal/Backdrop";
 import Modal from "./Components/Modal/Modal";
 import ReactDOM from "react-dom";
 import CartContext from "./store/cartContext";
 
 function App() {
-  const DUMMY_MEALS = [
-    {
-      id: "m1",
-      name: "Sushi",
-      description: "Finest fish and veggies",
-      price: 22.99,
-    },
-    {
-      id: "m2",
-      name: "Schnitzel",
-      description: "A german specialty!",
-      price: 16.5,
-    },
-    {
-      id: "m3",
-      name: "Barbecue Burger",
-      description: "American, raw, meaty",
-      price: 12.99,
-    },
-    {
-      id: "m4",
-      name: "Green Bowl",
-      description: "Healthy...and green...",
-      price: 18.99,
-    },
-  ];
+  const [dummyMeals,setDummyMeals] = useState([])
+
+  useEffect(()=>{
+    async function fetchMeals(){
+      const response =  (await fetch(`https://react-72706-default-rtdb.europe-west1.firebasedatabase.app/Meals.json`))
+      let data = await response.json()
+      let newMeals = []
+      for(let key in data){
+        newMeals.push(data[key])
+      }
+      setDummyMeals(newMeals)
+    }
+    fetchMeals()
+  },[])
+   
   const ctx = useContext(CartContext);
 
   return (
@@ -41,7 +30,7 @@ function App() {
       <Nav />
       <Header />
       <main>
-        <Menu menu={DUMMY_MEALS} />
+        <Menu menu={dummyMeals} />
       </main>
       {ctx.checkIfInCart ? (
         <React.Fragment>

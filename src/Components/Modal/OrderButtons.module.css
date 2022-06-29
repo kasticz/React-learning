@@ -1,0 +1,35 @@
+.modalButtons{
+    display: flex;
+    justify-content: flex-end;
+}
+.cancel,.order{
+    width: 12%;
+    height: 50px;
+    border-radius: 16px;
+    border: 1px solid #ad5502;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.cancel{
+    margin-right: 1rem;
+    color:#8a2b06;
+    background-color: white;    
+}
+.order{
+    background-color: #8a2b06;
+    color: white;
+}
+.order:hover,.order:active{
+    background-color: white;
+    color:#8a2b06;
+}
+.cancel:hover,.cancel:active{
+    background-color: #8a2b06;
+    color: white;
+}
+.order:disabled{
+    background-color: #dfd6d3;
+    color: black;
+    cursor: not-allowed;
+    border: 1px solid black
+}

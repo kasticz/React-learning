@@ -10,7 +10,7 @@ function CartButton(props) {
   }, 0);
 
   return (
-    <button onClick={ctx.toggleModal} className={styles.button}>
+    <button onClick={ctx.toggleModal} className={`${styles.button} ${ctx.cartButtonBump ? styles.bump : ``}`}>
       <div className={styles.icon}>
         <CartButtonIcon />
       </div>

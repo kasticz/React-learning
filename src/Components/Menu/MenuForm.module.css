@@ -6,7 +6,7 @@
     min-width: 15%;
     padding: 1rem
 }
-input{
+.addMore input{
     width: 60px;
     margin-left: 1rem;
     border-radius: 5px;
@@ -14,10 +14,10 @@ input{
     height: 100%;
     font-size: 1.5rem;
 }
- label{
+.addMore label{
     font-weight: 700;
 }
-.formButton{
+.addMore .formButton{
     margin-top: 0.5rem;
     border-radius: 10px;
     width: 80%;

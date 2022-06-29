@@ -3,7 +3,7 @@ import Card from '../UI/Card'
 import img from '../../assets/meals.jpg'
 function Header(props) {
   return (
-    <section className={styles.header}>
+    <header className={styles.header}>
         <div className={styles.image}>
       <img src={img} alt="" />
       </div>
@@ -18,7 +18,7 @@ function Header(props) {
           and of course by experienced chefs!
         </p>
       </Card>
-    </section>
+    </header>
   );
 }
 

@@ -12,6 +12,10 @@ function MenuForm(props) {
 
   function addNewMeal(e) {
     e.preventDefault();
+    ctx.setCartButtonBump(true);
+    setTimeout(() => {
+      ctx.setCartButtonBump(false);
+    }, 300);
     ctx.setCurrMeals((prevState) => {
       let newMeals = [
         ...prevState,
@@ -48,6 +52,7 @@ function MenuForm(props) {
           value={enteredAmount}
           id="amount"
           type="number"
+          min="1"
         />
       </div>
       <Button className={styles.formButton}>+ Add</Button>

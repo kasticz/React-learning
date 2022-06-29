@@ -9,6 +9,7 @@ const CartContext = React.createContext({
 export function CartContextProvider(props) {
   const [currMeals, setCurrMeals] = useState([]);
   const [checkIfInCart, setCheckIfInCart] = useState(false);
+  const [cartButtonBump,setCartButtonBump] = useState(false)
 
   function toggleModal() {
     setCheckIfInCart(!checkIfInCart);
@@ -21,6 +22,8 @@ export function CartContextProvider(props) {
         currMeals: currMeals,
         setCurrMeals: setCurrMeals,
         toggleModal: toggleModal,
+        cartButtonBump: cartButtonBump,
+        setCartButtonBump: setCartButtonBump
       }}
     >
       {props.children}
